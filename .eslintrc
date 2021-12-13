@@ -1,0 +1,21 @@
+{
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
+  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "import/extensions": ["error", { "js": "never", "svg": "always", "css": "always" }],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-filename-extension": 0,
+    "react/function-component-definition": 0
+  }
+}
