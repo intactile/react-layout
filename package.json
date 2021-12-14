@@ -1,6 +1,6 @@
 {
   "name": "@intactile/react-layout",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "React layout components",
   "main": "build/index.js",
   "module": "build/index.esm.js",
@@ -9,6 +9,16 @@
   ],
   "author": "Intactile Design",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intactile/react-layout.git"
+  },
+  "homepage": "https://github.com/intactile/react-layout#readme",
+  "keywords": [
+    "react",
+    "css",
+    "layout"
+  ],
   "prettier": {
     "singleQuote": true
   },
