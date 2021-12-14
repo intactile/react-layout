@@ -19,13 +19,13 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ['react', 'react-dom', 'prop-types', /@babel\/runtime/],
+  external: ['react', 'react-dom', 'prop-types'],
   plugins: [
     babel({
-      babelHelpers: 'runtime',
+      babelHelpers: 'bundled',
       exclude: 'node_modules/**',
     }),
-    resolve({ browser: true }),
+    resolve(),
     commonjs(),
   ],
 };
