@@ -9,7 +9,6 @@
   ],
   "author": "Intactile Design",
   "license": "MIT",
-  "private": false,
   "prettier": {
     "singleQuote": true
   },
