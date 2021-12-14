@@ -55,7 +55,7 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook"
   }
