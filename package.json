@@ -56,6 +56,7 @@
   "scripts": {
     "build": "rollup -c",
     "prepublishOnly": "npm run build",
+    "release": "np --no-tests --no-release-draft --message='Bump version to %s'",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook"
   }
