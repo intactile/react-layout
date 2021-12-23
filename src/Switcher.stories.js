@@ -16,12 +16,17 @@ export default {
         step: 1,
         min: 1,
         max: 10,
-      }
-    }
+      },
+    },
   },
 };
 
-const Template = (args) => <Switcher {...args}><div>Content</div><div>Content</div></Switcher>;
+const Template = (args) => (
+  <Switcher {...args}>
+    <div>Content</div>
+    <div>Content</div>
+  </Switcher>
+);
 
 const defaultArgs = {
   space: CSS_VARIABLES.space.s1,
@@ -31,4 +36,3 @@ const defaultArgs = {
 
 export const Default = Template.bind({});
 Default.args = defaultArgs;
-

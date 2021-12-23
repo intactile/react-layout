@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
 import { CSS_VARIABLES } from './constants';
-import { returnWhenTruthy } from './utils';
+import { returnWhenTruthy, isValidCssLengthValue } from './utils';
 
 const guttersStyle = (gutters) => css`
   padding-left: ${gutters};
@@ -28,7 +28,7 @@ const Center = ({ children, gutters, max, andText, intrinsic }) => {
         max-width: ${max};
         ${returnWhenTruthy(gutters)(guttersStyle)}
         ${returnWhenTruthy(andText)(andTextStyle)}
-      ${returnWhenTruthy(intrinsic)(intrinsicStyle)}
+        ${returnWhenTruthy(intrinsic)(intrinsicStyle)}
       `}
     >
       {children}
@@ -45,7 +45,7 @@ Center.defaultProps = {
 
 Center.propTypes = {
   children: PropTypes.node.isRequired,
-  gutters: PropTypes.oneOf(Object.values(CSS_VARIABLES.space)),
+  gutters: isValidCssLengthValue,
   max: PropTypes.string,
   andText: PropTypes.bool,
   intrinsic: PropTypes.bool,

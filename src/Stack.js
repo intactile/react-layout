@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
 import { CSS_VARIABLES } from './constants';
-import { returnWhenTruthy } from './utils';
+import { isValidCssLengthValue, returnWhenTruthy } from './utils';
 
 const splitAfterStyle = (splitAfter) => css`
-  &:only-child {
+  &:only-child:not(style) {
     height: '100%';
   }
 
-  & > :nth-child(${splitAfter}) {
+  & > :nth-child(${splitAfter}):not(style) {
     margin-bottom: auto;
   }
 `;
@@ -40,7 +40,7 @@ Stack.defaultProps = {
 
 Stack.propTypes = {
   children: PropTypes.node.isRequired,
-  space: PropTypes.oneOf(Object.values(CSS_VARIABLES.space)),
+  space: isValidCssLengthValue,
   splitAfter: PropTypes.number,
 };
 

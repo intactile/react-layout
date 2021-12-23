@@ -1,10 +1,10 @@
 import React from 'react';
-import Stack from './Stack';
+import Grid from './Grid';
 import { CSS_VARIABLES } from './constants';
 
 export default {
-  title: 'Layout/Stack',
-  component: Stack,
+  title: 'Layout/Grid',
+  component: Grid,
   argTypes: {
     space: {
       options: Object.values(CSS_VARIABLES.space),
@@ -14,16 +14,16 @@ export default {
 };
 
 const Template = (args) => (
-  <Stack {...args}>
-    <div>Content</div>
-    <div>Content</div>
-  </Stack>
+  <Grid {...args}>
+    <div>Cell #1</div>
+    <div>Cell #2</div>
+    <div>Cell #3</div>
+    <div>Cell #4</div>
+  </Grid>
 );
 
-const defaultArgs = {
-  space: CSS_VARIABLES.space.s1,
-  splitAfter: null,
-};
-
 export const Default = Template.bind({});
-Default.args = defaultArgs;
+Default.args = {
+  space: CSS_VARIABLES.space.s1,
+  min: '250px',
+};

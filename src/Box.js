@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
 import { CSS_VARIABLES } from './constants';
+import { isValidCssLengthValue } from './utils';
 
 const Box = ({ children, padding, borderWidth }) => {
   return (
@@ -26,7 +27,7 @@ Box.defaultProps = {
 
 Box.propTypes = {
   children: PropTypes.node.isRequired,
-  padding: PropTypes.oneOf(Object.values(CSS_VARIABLES.space)),
+  padding: isValidCssLengthValue,
   borderWidth: PropTypes.number,
 };
 

@@ -43,15 +43,18 @@
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
     "@storybook/react": "^6.4.9",
+    "babel-jest": "^27.4.5",
     "babel-loader": "^8.2.3",
     "eslint": "^8.4.1",
     "eslint-config-airbnb": "^19.0.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
+    "jest": "^27.4.5",
     "np": "^7.6.0",
     "prettier": "^2.5.1",
     "prop-types": "^15.7.2",
@@ -64,6 +67,7 @@
     "prepublishOnly": "npm run build",
     "release": "np --no-tests --no-release-draft --message='Bump version to %s'",
     "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook"
+    "storybook:build": "build-storybook",
+    "test": "jest"
   }
 }

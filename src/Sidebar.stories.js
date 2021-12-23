@@ -17,7 +17,12 @@ export default {
   },
 };
 
-const Template = (args) => <Sidebar {...args}><div>Sidebar content</div><div>Main content</div></Sidebar>;
+const Template = (args) => (
+  <Sidebar {...args}>
+    <div>Sidebar content</div>
+    <div>Main content</div>
+  </Sidebar>
+);
 
 const defaultArgs = {
   space: CSS_VARIABLES.space.s1,
@@ -28,4 +33,3 @@ const defaultArgs = {
 
 export const Default = Template.bind({});
 Default.args = defaultArgs;
-

@@ -7,8 +7,10 @@
     }
   },
   "extends": ["airbnb", "plugin:prettier/recommended"],
+  "plugins": ["jest"],
   "env": {
-    "browser": true
+    "browser": true,
+    "jest/globals": true
   },
   "rules": {
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],

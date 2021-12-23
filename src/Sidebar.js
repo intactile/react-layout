@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
 import { CSS_VARIABLES } from './constants';
+import { isValidCssLengthValue } from './utils';
 
 function Sidebar({ children, side, sideWidth, contentMin, space }) {
   return (
@@ -16,8 +17,8 @@ function Sidebar({ children, side, sideWidth, contentMin, space }) {
           flex-basis: ${sideWidth || 'auto'};
         }
 
-        &[data-side='left'] > :last-child,
-        &[data-side='right'] > :first-child {
+        &[data-side='left'] > :last-child:not(style),
+        &[data-side='right'] > :first-child:not(style) {
           flex-basis: 0;
           flex-grow: 999;
           min-width: ${contentMin};
@@ -41,7 +42,7 @@ Sidebar.propTypes = {
   side: PropTypes.string,
   sideWidth: PropTypes.string,
   contentMin: PropTypes.string,
-  space: PropTypes.oneOf(Object.values(CSS_VARIABLES.space)),
+  space: isValidCssLengthValue,
 };
 
 export default Sidebar;

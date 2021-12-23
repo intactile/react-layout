@@ -11,11 +11,25 @@ export default {
       control: { type: 'select' },
     },
     justify: {
-      options: ['flex-start', 'flex-end', 'space-between', 'space-around', 'center', 'stretch'],
+      options: [
+        'flex-start',
+        'flex-end',
+        'space-between',
+        'space-around',
+        'center',
+        'stretch',
+      ],
       control: { type: 'select' },
     },
     align: {
-      options: ['flex-start', 'flex-end', 'space-between', 'space-around', 'center', 'stretch'],
+      options: [
+        'flex-start',
+        'flex-end',
+        'space-between',
+        'space-around',
+        'center',
+        'stretch',
+      ],
       control: { type: 'select' },
     },
   },
@@ -23,9 +37,17 @@ export default {
 
 const tags = ['Tag 1', 'Tag 2', 'Tag 3', 'Tag 4', 'Tag 5'];
 
-const Tag = ({ children }) => <div style={{ padding: 14, border: '1px solid black' }}>{children}</div>;
+const Tag = ({ children }) => (
+  <div style={{ padding: 14, border: '1px solid black' }}>{children}</div>
+);
 
-const Template = (args) => <Cluster {...args}>{tags.map(tag => <Tag>{tag}</Tag>)}</Cluster>;
+const Template = (args) => (
+  <Cluster {...args}>
+    {tags.map((tag) => (
+      <Tag key={tag}>{tag}</Tag>
+    ))}
+  </Cluster>
+);
 
 const defaultArgs = {
   space: CSS_VARIABLES.space.s1,
@@ -35,4 +57,3 @@ const defaultArgs = {
 
 export const Default = Template.bind({});
 Default.args = defaultArgs;
-

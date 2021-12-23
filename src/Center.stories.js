@@ -14,7 +14,11 @@ export default {
 };
 
 const Template = (args) => <Center {...args}>Content of the Center</Center>;
-const TemplateIntrinsic = (args) => <Center {...args}><div>Content of the Center</div></Center>;
+const TemplateIntrinsic = (args) => (
+  <Center {...args}>
+    <div>Content of the Center</div>
+  </Center>
+);
 
 const defaultArgs = {
   gutters: 0,

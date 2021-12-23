@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
 import { CSS_VARIABLES } from './constants';
+import { isValidCssLengthValue } from './utils';
 
 function Switcher({ children, space, threshold, limit }) {
   return (
@@ -15,8 +16,8 @@ function Switcher({ children, space, threshold, limit }) {
           flex-basis: calc((${threshold} - 100%) * 999);
         }
 
-        & > :nth-last-child(n + ${parseInt(limit, 10)} + 1),
-        & > :nth-last-child(n + ${parseInt(limit, 10)} + 1) ~ * {
+        & > :nth-last-child(n + ${parseInt(limit, 10)} + 1):not(style),
+        & > :nth-last-child(n + ${parseInt(limit, 10)} + 1):not(style) ~ * {
           flex-basis: 100%;
         }
       `}
@@ -34,7 +35,7 @@ Switcher.defaultProps = {
 
 Switcher.propTypes = {
   children: PropTypes.node.isRequired,
-  space: PropTypes.oneOf(Object.values(CSS_VARIABLES.space)),
+  space: isValidCssLengthValue,
   threshold: PropTypes.string,
   limit: PropTypes.number,
 };

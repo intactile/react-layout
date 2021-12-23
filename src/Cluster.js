@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
 import { CSS_VARIABLES } from './constants';
+import { isValidCssLengthValue } from './utils';
 
 const Cluster = ({ children, space, justify, align }) => {
   return (
@@ -26,7 +27,7 @@ Cluster.defaultProps = {
 
 Cluster.propTypes = {
   children: PropTypes.node.isRequired,
-  space: PropTypes.oneOf(Object.values(CSS_VARIABLES.space)),
+  space: isValidCssLengthValue,
   justify: PropTypes.string,
   align: PropTypes.string,
 };

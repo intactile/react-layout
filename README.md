@@ -36,18 +36,18 @@ I encourage you to start with the following scale and adapt it to your needs.
 ## Use
 
 ```
-import * as L from '@intactile/react-layout';
+import { Box } from '@intactile/react-layout';
 
 function MyComponent() {
   return (
-    <L.Box>content</L.Box>
+    <Box>content</Box>
   );
 }
 ```
 
 ## Layouts
 
-Six differents layouts are currently implemented: Box, Center, Cluster, Sidebar, Stack and Switcher.
+Eleven differents layouts are currently implemented: Box, Center, Cluster, Cover, Frame, Grid, Imposter, Reel, Sidebar, Stack and Switcher.
 
 ### Box
 
@@ -55,7 +55,7 @@ Six differents layouts are currently implemented: Box, Center, Cluster, Sidebar,
 
 | Name         | Type    | Default  | Description |
 | ------------ | ------- | -------- | ----------- |
-| padding | string | `var(--s1)` | Set the padding around the box, accept any valid css size value |
+| padding | string | `var(--s1, 1.5rem)` | Set the padding around the box, accept any valid css size value |
 | borderWidth | number | `1` | Set the width of the border around the box |
 
 ### Center
@@ -65,7 +65,7 @@ Six differents layouts are currently implemented: Box, Center, Cluster, Sidebar,
 | Name         | Type    | Default  | Description |
 | ------------ | ------- | -------- | ----------- |
 | gutters | string | `null` | Set the gutters on each side of the layout, accept any valid css size value |
-| max | string | `var(--measure)` | Set the max width of the layout, accept any valid css size value |
+| max | string | `var(--measure, 65ch)` | Set the max width of the layout, accept any valid css size value |
 | andText | bool | `false` | Should the text inside the layout also be centered or not? |
 | intrinsic | bool | `false` | Should the “nodes” inside the layout also be centered or not? |
 
@@ -75,7 +75,7 @@ Six differents layouts are currently implemented: Box, Center, Cluster, Sidebar,
 
 | Name         | Type    | Default  | Description |
 | ------------ | ------- | -------- | ----------- |
-| space | string | `var(--s1)` | Set the gutters on each side of the layout, accept any valid css size value |
+| space | string | `var(--s1, 1.5rem)` | Set the gutters on each side of the layout, accept any valid css size value |
 | justify | string | `flex-start` | Use a valid `justify-content` css property value |
 | align | string | `flex-start` | Use a valid `align-items` css property value |
 
