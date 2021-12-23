@@ -1,6 +1,6 @@
 {
   "name": "@intactile/react-layout",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React layout components",
   "main": "build/index.js",
   "module": "build/index.esm.js",
