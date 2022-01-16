@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import { CSS_VARIABLES } from './constants';
 import { isValidCssLengthValue } from './utils';
 
-const Cluster = ({ children, space, justify, align }) => {
+const Cluster = ({ children, space, justify, align, ...rest }) => {
   return (
     <div
       css={css`
@@ -13,6 +13,7 @@ const Cluster = ({ children, space, justify, align }) => {
         align-items: ${align};
         gap: ${space};
       `}
+      {...rest}
     >
       {children}
     </div>
