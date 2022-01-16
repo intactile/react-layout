@@ -13,7 +13,7 @@ const splitAfterStyle = (splitAfter) => css`
   }
 `;
 
-const Stack = ({ children, space, splitAfter }) => {
+const Stack = ({ children, space, splitAfter, ...rest }) => {
   return (
     <div
       css={css`
@@ -27,6 +27,7 @@ const Stack = ({ children, space, splitAfter }) => {
 
         ${returnWhenTruthy(splitAfter)(splitAfterStyle)}
       `}
+      {...rest}
     >
       {children}
     </div>
