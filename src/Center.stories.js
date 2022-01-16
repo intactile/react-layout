@@ -21,7 +21,7 @@ const TemplateIntrinsic = (args) => (
 );
 
 const defaultArgs = {
-  gutters: 0,
+  gutters: null,
   max: CSS_VARIABLES.measure,
   andText: false,
   intrinsic: false,

@@ -25,6 +25,7 @@ export const isValidCssLengthValue = (props, propName, componentName) => {
   const value = props[propName];
 
   if (
+    value !== null &&
     !isZero(value) &&
     !isCssLength(value) &&
     !isCssPercentage(value) &&
@@ -33,7 +34,7 @@ export const isValidCssLengthValue = (props, propName, componentName) => {
   ) {
     return new Error(
       `Invalid prop \`${propName}\` supplied to` +
-        ` \`${componentName}\`. Validation failed.` +
+        ` \`${componentName}\`. Validation failed. ` +
         `Supply a valid CSS length, percentage, CSS variable or ‘auto’`
     );
   }
